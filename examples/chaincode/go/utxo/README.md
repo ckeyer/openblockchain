@@ -20,7 +20,7 @@ cd $GOPATH/src/github.com/openblockchain/obc-peer/examples/chaincode/go/utxo/
 docker build -t utxo:0.1.0 .
 ```
 
-Next, modify the `openchain.yaml` file in the obc-peer project to point to the local Docker image that was built in the previous step. In the openchain.yaml file find `chaincode.golang.Dockerfile` and change it from from `golang:1.6` to `utxo:0.1.0`
+Next, modify the `openchain.yaml` file in the obc-peer project to point to the local Docker image that was built in the previous step. In the openchain.yaml file find `chaincode.golang.Dockerfile` and change it `from` from `golang:1.6` to `utxo:0.1.0`
 
 Start the peer using the following commands
 ```

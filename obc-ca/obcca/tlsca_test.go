@@ -20,31 +20,25 @@ under the License.
 package obcca
 
 import (
-	"io/ioutil"
-	"net"
-	"os"
-	"testing"
-	"time"
-
-	"golang.org/x/net/context"
-
-	"github.com/spf13/viper"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
-
 	"crypto/ecdsa"
 	"crypto/rand"
 	"crypto/x509"
 	"google/protobuf"
+	"io/ioutil"
+	"net"
+	"os"
 	"path/filepath"
+	"testing"
+	"time"
 
 	"github.com/golang/protobuf/proto"
+	obcca "github.com/openblockchain/obc-peer/obc-ca/protos"
 	"github.com/openblockchain/obc-peer/openchain/crypto/utils"
 	"github.com/openblockchain/obc-peer/openchain/util"
-
-	_ "fmt"
-
-	obcca "github.com/openblockchain/obc-peer/obc-ca/protos"
+	"github.com/spf13/viper"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 )
 
 var (

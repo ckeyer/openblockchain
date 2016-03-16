@@ -20,16 +20,16 @@ under the License.
 package obcpbft
 
 import (
-	gp "google/protobuf"
+	"fmt"
 	"math/rand"
 	"reflect"
 	"testing"
 
+	gp "google/protobuf"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/google/gofuzz"
 	"github.com/op/go-logging"
-
-	"fmt"
 
 	pb "github.com/openblockchain/obc-peer/protos"
 )

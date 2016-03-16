@@ -28,13 +28,13 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/looplab/fsm"
 	"github.com/op/go-logging"
+	"golang.org/x/net/context"
+
 	"github.com/openblockchain/obc-peer/openchain/crypto"
+	"github.com/openblockchain/obc-peer/openchain/ledger"
 	"github.com/openblockchain/obc-peer/openchain/ledger/statemgmt"
 	"github.com/openblockchain/obc-peer/openchain/util"
 	pb "github.com/openblockchain/obc-peer/protos"
-	"golang.org/x/net/context"
-
-	"github.com/openblockchain/obc-peer/openchain/ledger"
 )
 
 const (
@@ -1158,7 +1158,7 @@ func (handler *Handler) initOrReady(uuid string, f *string, initArgs []string, t
 		send = true
 	}
 
-	if  err:= handler.initializeSecContext(tx, depTx); err != nil {
+	if err := handler.initializeSecContext(tx, depTx); err != nil {
 		handler.deleteTxContext(uuid)
 		return nil, err
 	}

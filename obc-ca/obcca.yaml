@@ -74,6 +74,7 @@ eca:
                 test_user8: 1 W8G0usrU7jRk
                 test_user9: 1 H80SiB5ODKKQ
 
+
 pki:
           validity-period:
                  # Setting the update property will prevent the invocation of the update_validity_period system chaincode to update the validity period.

@@ -23,7 +23,6 @@ import (
 	"bytes"
 	"crypto/ecdsa"
 	"crypto/rand"
-	//	"crypto/rsa"
 	"crypto/subtle"
 	"crypto/x509"
 	"crypto/x509/pkix"

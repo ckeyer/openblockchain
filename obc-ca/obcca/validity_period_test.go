@@ -22,13 +22,14 @@ package obcca
 import (
 	"encoding/json"
 	"fmt"
-	google_protobuf "google/protobuf"
 	"io/ioutil"
 	"net"
 	"os"
 	"strconv"
 	"testing"
 	"time"
+
+	google_protobuf "google/protobuf"
 
 	"github.com/spf13/viper"
 	"golang.org/x/net/context"
