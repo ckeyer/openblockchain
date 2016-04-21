@@ -23,6 +23,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"os"
 	"strings"
 
 	"github.com/fsouza/go-dockerclient"
@@ -99,7 +100,11 @@ func (vm *DockerVM) Start(ctxt context.Context, ccid ccintf.CCID, args []string,
 		dockerLogger.Error(fmt.Sprintf("start-could not recreate container %s", err))
 		return err
 	}
-	err = client.StartContainer(containerID, &docker.HostConfig{NetworkMode: "host"})
+
+	err = client.StartContainer(containerID, &docker.HostConfig{
+		NetworkMode: "bridge",
+		DNS:         []string{os.Getenv("CSPHERE_NODE_IP")},
+	})
 	if err != nil {
 		dockerLogger.Error(fmt.Sprintf("start-could not start container %s", err))
 		return err

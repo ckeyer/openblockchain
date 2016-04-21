@@ -1,0 +1,9 @@
+FROM ckeyer/obc:base
+MAINTAINER ckeyer <me@ckeyer.com>
+
+COPY . $GOPATH/src/github.com/hyperledger/fabric/
+
+RUN cd $GOPATH/src/github.com/hyperledger/fabric/ && \
+	go build -o ./peer/peer ./peer/main.go
+
+WORKDIR $GOPATH/src/github.com/hyperledger/fabric/peer
